@@ -9,4 +9,4 @@ run with flags
 ```
 go run main.go -wnum {NUM} -tnum {NUM}
 ```
-where wnum is number of workers and tnum is number of task
+where wnum is number of workers and tnum is number of tasks
