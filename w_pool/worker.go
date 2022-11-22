@@ -2,7 +2,7 @@ package w_pool
 
 import (
 	"context"
-	"log"
+	"fmt"
 	"strconv"
 	"sync"
 )
@@ -28,7 +28,7 @@ func (w *Worker) Start(ctx context.Context, wg *sync.WaitGroup) {
 		for {
 			select {
 			case <-ctx.Done():
-				log.Println("progress of " + strconv.Itoa(w.Id) + " worker is: " + strconv.Itoa(w.progress) + " tasks")
+				fmt.Println("progress of " + strconv.Itoa(w.Id) + " worker is: " + strconv.Itoa(w.progress) + " tasks")
 				return
 			case t := <-w.tasks:
 				w.progress++
